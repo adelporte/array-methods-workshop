@@ -27,3 +27,23 @@ var result = newArray2.filter(getPositives);
 console.log(result);
 var result2 = newArray3.filter(getPositives);
 console.log(result2);
+
+/*Exercice 3 - Write a function called filterArray that takes an array AND a function as arguments. 
+Your filter function should return a new array 
+that contains only the elements where the passed function returns a truthy value.*/
+
+var newArray4 = [10, 0, 55, 45, 0, 89, 45];
+var newArray4 = [false, true, false, true];
+
+function filterArray(array, func) {
+    return array.filter(func);
+}
+
+function returnsTrueValues(num) {
+    if (num) {
+        return num;
+    }
+}
+
+var finalResult = filterArray(newArray4, returnsTrueValues);
+console.log(finalResult);
