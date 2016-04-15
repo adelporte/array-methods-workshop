@@ -85,3 +85,31 @@ function countVowels(string) {
 var newString10 = "awhat is the longest word in there";
 
 console.log(countVowels(newString10));
+
+
+/*Exercice 6 - Write a function called highLow that takes an array of numbers, 
+and returns an object with a property highest containing 
+the highest number, and a property lowest containing the lowest number, 
+using Array.prototype.reduce.
+
+For example, starting with [1, -10, 20, 40, 5], 
+your function should return {highest: 40, lowest: -10}.*/
+
+function highLow(newArray) {
+    return newArray.reduce(function(acc, next) {
+        if (acc.highest < next) {
+            acc.highest = next;
+        }
+        if (acc.lowest > next) {
+            acc.lowest = next;
+        }
+        return acc;
+    }, {
+        highest: -Infinity,
+        lowest: Infinity
+    });
+}
+
+var thisIsAnArray = [10, 50, 8, 65, 4798698697697597659765674875486548640];
+
+console.log(highLow(thisIsAnArray));
