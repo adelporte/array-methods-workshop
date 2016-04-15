@@ -24,16 +24,16 @@ function getPositives(num) {
 }
 
 var result = newArray2.filter(getPositives);
-console.log(result);
+//console.log(result);
 var result2 = newArray3.filter(getPositives);
-console.log(result2);
+//console.log(result2);
 
 /*Exercice 3 - Write a function called filterArray that takes an array AND a function as arguments. 
 Your filter function should return a new array 
 that contains only the elements where the passed function returns a truthy value.*/
 
 var newArray4 = [10, 0, 55, 45, 0, 89, 45];
-var newArray4 = [false, true, false, true];
+var newArray5 = [false, true, false, true];
 
 function filterArray(array, func) {
     return array.filter(func);
@@ -46,4 +46,22 @@ function returnsTrueValues(num) {
 }
 
 var finalResult = filterArray(newArray4, returnsTrueValues);
-console.log(finalResult);
+/*console.log(finalResult);*/
+
+/*Exercice 4 - Write a function called longestWord that takes a string as argument, 
+and returns the longest word in the string. 
+You should use Array.prototype.reduce to do your work.*/
+
+function longestWord(string) {
+    var sliptString = string.split(" ");
+    return sliptString.reduce(function(prev, next){
+        if(prev.length < next.length){
+            prev = next;
+        }
+        return prev;
+    });
+}
+
+var newString = "what is the longest word in there";
+
+console.log(longestWord(newString));
